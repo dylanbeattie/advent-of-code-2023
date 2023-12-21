@@ -25,4 +25,19 @@ public class MapTests {
 		var map = new Map(lines);
 		map.Lookup(input).ShouldBe(output);
 	}
+
+	[Theory]
+	[InlineData(98, 50)]
+	[InlineData(99, 51)]
+	[InlineData(53, 55)]
+	[InlineData(10, 10)]
+	public void Spam_Maps_Maps(long input, long output) {
+		var lines = new[] {
+			"50 98 2",
+			"52 50 48"
+		};
+		var map = new Map(lines);
+		map.ReverseLookup(output).ShouldBe(input);
+	}
+
 }
