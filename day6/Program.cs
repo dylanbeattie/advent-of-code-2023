@@ -66,8 +66,6 @@ public class Race
 		var s2 = (-b - (Math.Sqrt(b * b - (4 * a * c)))) / (2 * a);
 		var lower = Math.Ceiling(Math.Min(s1, s2));
 		var upper = Math.Ceiling(Math.Max(s1, s2));
-		Console.WriteLine(lower);
-		Console.WriteLine(upper);
 		return (long)(upper - lower);
 	}
 	public long Distance(long hold) => (duration - hold) * hold;
